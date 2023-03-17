@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+   
+</head>
+<body>
+<div class="container">
+
+<div class="box">
+  <h3 id="advice-number"></h3>
+  <h2 id="advice"></h2>
+  <img class="line" src="./images/pattern-divider-mobile.svg" alt="">
+  
+</div>
+
+
+</div>
+ 
+<button  id="generate-btn" class="logo">
+  <img src="./images/icon-dice.svg" alt="">
+</button>
+<script>
+  const adviceList = [
+    "Always be yourself.",
+    "Don't worry about the little things.",
+    "Take time to relax and recharge.",
+    "Try new things and take risks.",
+    "Believe in yourself and your abilities.",
+    "Be kind to yourself and others.",
+    "Focus on the present moment.",
+    "Stay positive and keep moving forward.",
+    "Learn from your mistakes and failures.",
+   
+    "Don't be afraid to ask for help when you need it."
+  ];
+  
+  const adviceNumberEl = document.getElementById("advice-number");
+  const adviceEl = document.getElementById("advice");
+  const generateBtn = document.getElementById("generate-btn");
+  
+  generateBtn.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * adviceList.length);
+    const randomAdvice = adviceList[randomIndex];
+    const adviceNumber = randomIndex + 1;
+    adviceNumberEl.textContent = "Advice #" + adviceNumber;
+    adviceEl.textContent = randomAdvice;
+  });
+</script>
+</body>
+</html>
